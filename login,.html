@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" href="./css/dialog.css" />
+    <script src="./js/rem.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div style="width: 5.25rem;height: 5.25rem;margin: 0 auto;">
+        <img src="./img/logo.png" alt="logo" style="height:100%;" />
+      </div>
+      <div class="login-title pingfangRegular">夫子医</div>
+      <div class="inputBox aui-content-padded">
+        <div class="inputBox-bar pingfangRegular">
+          <div class="inputBox-bar-name aui-clearfix">
+            <div class="phoneNum float-l">手&nbsp;机&nbsp;号</div>
+          </div>
+          <div class="inputBox-bar-input">
+            <input
+              type="tel"
+              name="name"
+              id="name"
+              maxlength="11"
+              class="color-66 pingfangRegular telVal_"
+            />
+          </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular">
+          <div class="inputBox-bar-name aui-clearfix">
+            <div class="pwd float-l">密&nbsp;码</div>
+            <div class="rpwd float-r _rpwd">忘记密码</div>
+          </div>
+          <div class="inputBox-bar-input">
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="color-66 pingfangRegular pwdVal_"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="btnBox pingfangRegular">
+        <a href="javascript:;" class="color-66" id="toRegister"
+          >&nbsp;新&nbsp;用&nbsp;户&nbsp;注&nbsp;册&nbsp;</a
+        >
+        <button class="aui-btn aui-btn-block login-btn" id="login">
+          登&nbsp;录
+        </button>
+      </div>
+    </div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/dialog.js"></script>
+    <script type="text/javascript">
+      $("#login").click(function() {
+        if ($("#name").val() == '') {
+          noticeDialog("请输入帐号");
+        }else if ($("#pass").val() == '') {
+          noticeDialog("请输入密码");
+        } else{
+            window.location.href = './register.html';
+        }
+      });
+      function noticeDialog(text) {
+        $(document).dialog({
+          type: "notice",
+          infoText: text,
+          autoClose: 1500,
+          position: "center" // center: 居中; bottom: 底部
+        });
+      }
+    </script>
+  </body>
+</html>

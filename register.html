@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="../css/font.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+</head>
+
+<body>
+    <div class="r-container aui-content-padded">
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">手&nbsp;机&nbsp;号</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="tel" maxlength="11" id="phone" class="color-66 pingfangRegular tel_">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">验&nbsp;证&nbsp;码</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="number" id="code" class="code-input color-66 pingfangRegular">
+                <div id="getCode" class="aui-btn getCode-btn color-66 pingfangRegular" tapmode>获&nbsp;取&nbsp;验&nbsp;证&nbsp;码</div>
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">密&nbsp;码</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="password" class="color-66 pingfangRegular pwd">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">确&nbsp;认&nbsp;密&nbsp;码</div>
+                <div class="prompt float-r">X&nbsp;两&nbsp;次&nbsp;密&nbsp;码&nbsp;不&nbsp;一&nbsp;致</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="repassword" class="color-66 pingfangRegular rpwd">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">姓&nbsp;名</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="name" class="color-66 pingfangRegular">
+            </div>
+        </div>
+        <!-- <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">身&nbsp;份&nbsp;证&nbsp;号</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="number" class="color-66 pingfangRegular">
+            </div>
+        </div> -->
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">性&nbsp;别</div>
+            </div>
+            <div class="inputBox-bar-input sex">
+                <div class="input-sex-box float-l select-item" sex="男" tapmode>男</div>
+                <div class="input-sex-box float-r" sex="女" tapmode>女</div>
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">出&nbsp;生&nbsp;年&nbsp;月</div>
+            </div>
+            <div class="inputBox-bar-input" style="position: relative;">
+                <div class="input-birthday-box float-l">
+                    <input type="text" id="year" maxlength="4">
+                </div>
+                <div class="small-line"></div>
+                <div class="input-birthday-box float-r">
+                    <input type="text" id="month" maxlength="2">
+                </div>
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">民&nbsp;族</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="nation" class="color-66 pingfangRegular">
+            </div>
+        </div>
+        <!-- <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">职&nbsp;业</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="work" class="color-66 pingfangRegular">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">工&nbsp;作&nbsp;单&nbsp;位</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="work_unit" class="color-66 pingfangRegular">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">现&nbsp;住&nbsp;址</div>
+            </div>
+            <div class="inputBox-bar-input">
+                <input type="text" id="address" class="color-66 pingfangRegular">
+            </div>
+        </div>
+        <div class="inputBox-bar pingfangRegular" style="margin-bottom: .75rem;">
+            <div class="inputBox-bar-name aui-clearfix">
+                <div class="phoneNum float-l">婚&nbsp;姻&nbsp;状&nbsp;况</div>
+            </div>
+            <div class="inputBox-bar-input marriage">
+                <div class="input-marriage-box float-l select-sex" marriage="已婚" tapmode>已婚</div>
+                <div class="input-marriage-box float-r select-item" marriage="未婚" tapmode>未婚</div>
+            </div>
+        </div> -->
+        <div class="btnBox pingfangRegular" style="margin-top: 1.9rem;">
+            <div class="input-select-box">
+                <span id="consent" tapmode></span>
+                <a href="javascript:;" class="color-66" id="toUserProtocol" tapmode styel="margin-bottom: 0;">&nbsp;同&nbsp;意&nbsp;用&nbsp;户&nbsp;协&nbsp;议&nbsp;</a>
+            </div>
+            <div class="aui-btn aui-btn-block login-btn" id="register">注&nbsp;册</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/sha1.js"></script>
+<script type="text/javascript">
+    var consent = $api.byId('consent');
+
+    apiready = function() {
+        console.log(api.frameName);
+
+        //同意用户协议
+        api.addEventListener({
+            name: 'userProtocol'
+        }, function(ret) {
+            if (ret.value.isOk == true && !$api.hasCls(consent, 'consentAgreement')) {
+                $api.addCls(consent, 'consentAgreement');
+            }
+        });
+    };
+    var selectSex = $api.domAll('.input-sex-box');
+    var selectMa = $api.domAll('.input-marriage-box');
+    var selectSexL = selectSex.length;
+    var selectMaL = selectSex.length;
+
+    for (var i = 0; i < selectSexL; i++) {
+        $api.addEvt(selectSex[i], 'click', function() {
+            for (var j = 0; j < selectSexL; j++) {
+                $api.removeCls(selectSex[j], 'select-item');
+            }
+            if (!$api.hasCls(this, 'select-item')) {
+                $api.addCls(this, 'select-item');
+            }
+        });
+    }
+
+    for (var m = 0; m < selectMaL; m++) {
+        $api.addEvt(selectMa[m], 'click', function() {
+            for (var n = 0; n < selectMaL; n++) {
+                $api.removeCls(selectMa[n], 'select-item');
+            }
+            if (!$api.hasCls(this, 'select-item')) {
+                $api.addCls(this, 'select-item');
+            }
+        });
+    }
+
+
+    $api.addEvt(consent, 'click', function() {
+        $api.toggleCls(consent, 'consentAgreement');
+    });
+
+    // ------------获取验证码----------------
+    var getCode = $api.byId('getCode');
+    var intervalFun;
+    var countdown = 60;
+
+    var btnS = 1;
+    $api.addEvt(getCode, 'click', function() {
+        jinteng.log('========');
+        if (btnS == 1) {
+            $('#getCode').attr('disabled', false);
+            btnS = 2;
+        } else {
+            return false;
+        }
+        intervalFun = setInterval(function() {
+            settime();
+        }, 1000);
+        var phone = $api.val($api.byId('phone'));
+        // console.log(phone);
+        $('#getCode').attr('disabled', false);
+        if (countdown == 60) {
+            api.ajax({
+                url: _JINTENG.API_CONFIG.BASEURL + '/index.php/Home/User/ajaxSend',
+                method: 'get',
+                data: {
+                    values: {
+                        phone: phone
+                    }
+                }
+            }, function(ret, err) {
+                console.log(JSON.stringify(ret));
+                if (ret.status == 20000) {
+                    api.alert({
+                        title: '提示',
+                        msg: ret.msg
+                    });
+                    return false;
+                } else {
+
+
+                }
+            })
+        }
+
+    });
+
+    function settime() {
+        if (countdown == 0) {
+            // $api.rmEvt(getCode, 'click');
+            $api.html(getCode, "获&nbsp;取&nbsp;验&nbsp;证&nbsp;码");
+            countdown = 60;
+
+            btnS = 1;
+            clearInterval(intervalFun);
+        } else {
+            $api.html(getCode, "重&nbsp;新&nbsp;发&nbsp;送&nbsp;(" + countdown + ")");
+            countdown--;
+        }
+    }
+
+    //  用户协议
+
+    var toUserProtocol = $api.byId('toUserProtocol');
+
+    $api.addEvt(toUserProtocol, 'click', function() {
+        api.openFrame({
+            name: 'userProtocol',
+            url: 'userProtocol.html',
+            bounces: false,
+            bgColor: 'rgba(0,0,0,.58)',
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: api.winHeight
+            },
+            animation: {
+                type: "fade", //动画类型（详见动画类型常量）
+                subType: 'from_right',
+                duration: 300
+            }
+        });
+    });
+
+    var pwd = $api.dom('.pwd');
+    var rpwd = $api.dom('.rpwd');
+    var prompt = $api.dom('.prompt');
+
+    $api.addEvt(rpwd, 'blur', function() {
+        if (rpwd.value != pwd.value) {
+            $api.css(prompt, 'display: block;');
+        } else if (rpwd.value == pwd.value) {
+            $api.css(prompt, 'display: none;');
+        }
+    });
+
+    var register = $api.byId('register');
+    var inputs = $api.domAll('input');
+
+
+    $api.addEvt(register, 'click', function() {
+        var boolFrm = checkFrm();
+        if (!boolFrm) {
+            return;
+        }
+        api.confirm({
+            title: '提示',
+            msg: '是否同意用户协议',
+            buttons: ['确定', '取消']
+        }, function(ret, err) {
+            if (ret.buttonIndex == 1) {
+                var phone = $api.val($api.byId('phone'));
+                var code = $api.val($api.byId('code'));
+                var password = $api.val($api.byId('password'));
+                var repassword = $api.val($api.byId('repassword'));
+                var zname = $api.val($api.byId('name'));
+                //var number = $api.val($api.byId('number'));
+                var year = $api.val($api.byId('year'));
+                var month = $api.val($api.byId('month'));
+                var nation = $api.val($api.byId('nation'));
+                var work = $api.val($api.byId('work'));
+                var work_unit = $api.val($api.byId('work_unit'));
+                var address = $api.val($api.byId('address'));
+                var sex = $api.attr($api.dom('.sex>.select-item'), 'sex');
+                var marriage = $api.attr($api.dom('.marriage>.select-item'), 'marriage');
+                // console.log(marriage);
+
+                api.ajax({
+                    url: _JINTENG.API_CONFIG.BASEURL + '/index.php/Home/User/register',
+                    method: 'post',
+                    data: {
+                        values: {
+                            phone: phone,
+                            password: password,
+                            repassword: repassword,
+                            name: zname,
+                            //number: number,
+                            sex: sex,
+                            year: year,
+                            month: month,
+                            nation: nation,
+                            work: work,
+                            work_unit: work_unit,
+                            address: address,
+                            marriage: marriage,
+                            code: code
+                        }
+                    }
+                }, function(ret, err) {
+                    console.log(JSON.stringify(ret));
+                    //获取token
+                    if (ret.status == 20000) {
+                        api.alert({
+                            title: '提示',
+                            msg: ret.msg
+                        });
+                    } else {
+                        var userId = ret.info.uid;
+                        //会员id
+                        var name = zname;
+                        //会员昵称
+                        var portraitUri = _JINTENG.API_CONFIG.BASEURL + '/Public/user/image/2018-01-01/head_image.png';
+                        // console.log(portraitUri);
+                        //会员头像
+                        var appKey = "c9kqb3rdco8jj";
+                        var appSecret = "uaVKmhcRa3EPS0";
+                        // console.log(appSecret);
+                        var nonce = Math.floor(Math.random() * 1000000);
+                        // console.log(nonce);
+                        //随机数
+                        var timestamp = Date.now();
+                        // console.log(timestamp);
+                        //时间戳
+                        var signature = sha1("" + appSecret + nonce + timestamp);
+                        //数据签名(通过哈希加密计算)
+                        api.ajax({
+                            url: "http://api.cn.ronghub.com/user/getToken.json",
+                            method: "post",
+                            headers: {
+                                "RC-App-Key": appKey,
+                                "RC-Nonce": "" + nonce,
+                                "RC-Timestamp": "" + timestamp,
+                                "RC-Signature": "" + signature,
+                                "Content-Type": "application/x-www-form-urlencoded"
+                            },
+                            data: {
+                                values: {
+                                    userId: userId,
+                                    name: name,
+                                    portraitUri: portraitUri
+                                }
+                            }
+                        }, function(ret, err) {
+                            console.log(JSON.stringify(ret));
+                            $api.setStorage('token', ret.token);
+                            var uid = userId;
+                            var token = ret.token;
+                            api.ajax({
+                                url: _JINTENG.API_CONFIG.BASEURL + '/index.php/home/user/addToken',
+                                method: 'get',
+                                data: {
+                                    values: {
+                                        uid: uid,
+                                        token: token
+                                    }
+                                }
+                            }, function(ret, err) {
+                                api.openWin({
+                                    name: 'login',
+                                    url: './login.html',
+                                    reload: true
+                                });
+                            })
+                        });
+                    }
+                });
+            }
+        });
+
+    });
+
+    function checkFrm() {
+        var isOk = true;
+        for (var i = 0; i < inputs.length; i++) {
+            if ($api.val(inputs[i]) == '') {
+                api.alert({
+                    title: '提示',
+                    msg: '输入项不能为空',
+                }, function(ret, err) {});
+                isOk = false;
+                break;
+            }
+        }
+        if (isOk) {
+            if (rpwd.value != pwd.value) {
+                isOk = false;
+                api.alert({
+                    title: '提示',
+                    msg: '两次密码不一致',
+                }, function(ret, err) {});
+            }
+        }
+        return isOk;
+    }
+</script>
+
+</html>
