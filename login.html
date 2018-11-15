@@ -38,7 +38,9 @@
         <div class="inputBox-bar pingfangRegular">
           <div class="inputBox-bar-name aui-clearfix">
             <div class="pwd float-l">密&nbsp;码</div>
-            <div class="rpwd float-r _rpwd">忘记密码</div>
+            <div class="rpwd float-r _rpwd">
+              <a href="./forgetPwd.html">忘记密码</a>
+            </div>
           </div>
           <div class="inputBox-bar-input">
             <input
@@ -51,7 +53,7 @@
         </div>
       </div>
       <div class="btnBox pingfangRegular">
-        <a href="javascript:;" class="color-66" id="toRegister"
+        <a href="./register.html" id="toRegister"
           >&nbsp;新&nbsp;用&nbsp;户&nbsp;注&nbsp;册&nbsp;</a
         >
         <button class="aui-btn aui-btn-block login-btn" id="login">
@@ -60,25 +62,19 @@
       </div>
     </div>
     <script src="./js/zepto.min.js"></script>
+    <script src="./js/touch.js"></script>
     <script src="./js/dialog.js"></script>
+    <script src="./js/mydialog.js"></script>
     <script type="text/javascript">
-      $("#login").click(function() {
-        if ($("#name").val() == '') {
-          noticeDialog("请输入帐号");
-        }else if ($("#pass").val() == '') {
-          noticeDialog("请输入密码");
-        } else{
-            window.location.href = './register.html';
-        }
-      });
-      function noticeDialog(text) {
-        $(document).dialog({
-          type: "notice",
-          infoText: text,
-          autoClose: 1500,
-          position: "center" // center: 居中; bottom: 底部
+      $("#login").tap(function () {
+          if ($("#name").val() == '') {
+            noticeDialog("请输入帐号");
+          } else if ($("#pass").val() == '') {
+            noticeDialog("请输入密码");
+          } else {
+            window.location.href = './hotspot.html';
+          }
         });
-      }
     </script>
   </body>
 </html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <title>夫子圈信息详情</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fz_circle.css" />
+    <link rel="stylesheet" href="./css/dialog.css" />
+    <script src="./js/rem.js" charset="utf-8"></script>
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        overflow-y: auto;
+        background-color: #fff;
+      }
+
+      header {
+        align-items: flex-end;
+        width: 100%;
+        height: 2.6rem;
+        padding-bottom: 0.65rem;
+        box-sizing: border-box;
+        z-index: 10;
+      }
+
+      header .headerCon {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-family: pingfangBold, arial, sans-serif !important;
+        font-size: 0.8rem;
+      }
+
+      header .back,
+      header .backBlank {
+        flex: 0 0 0.55rem;
+        width: 0.55rem;
+        height: 0.85rem;
+      }
+
+      header .backBlank {
+        margin-left: 0.95rem;
+      }
+
+      header .back {
+        margin-right: 0.95rem;
+        background: url(./img/fzCircle/back.png) no-repeat;
+        background-size: cover;
+      }
+
+      header .title {
+        font-family: pingfangBold, arial, sans-serif !important;
+        font-size: 0.8rem;
+      }
+
+      .gzBox {
+        position: fixed;
+        top: 3.6rem;
+        left: 0;
+        width: 100%;
+        height: 3.55rem;
+        background-color: #e2e8e8;
+        padding: 0 1.2rem;
+        z-index: 5;
+      }
+
+      .blank {
+        width: 100%;
+        height: 7.15rem;
+      }
+
+      .infoTextBox {
+        width: 100%;
+        padding: 0.95rem 1.85rem;
+      }
+
+      .infoImg {
+        width: 11.95rem;
+        /*height: 9.45rem;*/
+        margin: 0.85rem auto;
+      }
+
+      .infoImg img {
+        width: 100%;
+        /*height: 100%;*/
+      }
+
+      .infoText {
+        word-break: break-all;
+        font-size: 0.7rem;
+      }
+
+      .commentBox {
+        width: 100%;
+        border-top: 0.2rem solid #e2e8e8;
+        box-sizing: border-box;
+      }
+
+      .commentBox .gzBox {
+        display: block;
+        position: static;
+        background-color: #fff;
+      }
+
+      .commentBox .CommentTextCon {
+        margin-bottom: 1rem;
+        /*text-indent: 1rem;*/
+        text-align: justify;
+        font-family: pingfangMedium, arial, sans-serif !important;
+        font-size: 0.6rem;
+        color: #000;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e2e8e8;
+      }
+
+      .blankFooter {
+        width: 100%;
+        min-height: 2rem;
+      }
+
+      .footerCon {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 2rem;
+        padding: 0 1.95rem;
+      }
+
+      .footerCon input {
+        width: 9.5rem;
+        height: 1.25rem;
+        min-height: 1.25rem;
+        box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.94);
+        border-radius: 0.5rem;
+        text-indent: 0.65rem;
+        font-size: 0.6rem;
+        margin-right: 1.8rem;
+      }
+
+      .commentTools {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .commentTools .thumbs-up {
+        width: 0.95rem;
+        height: 1rem;
+        background: url(./img/fzCircle/thumbs-up-blank.png) no-repeat;
+        background-size: cover;
+        margin-right: 1.4rem;
+      }
+
+      .commentTools .star {
+        width: 0.95rem;
+        height: 0.95rem;
+        background: url(./img/fzCircle/star-blank.png) no-repeat;
+        background-size: cover;
+      }
+
+      .thumbs-up-blank {
+        width: 0.75rem;
+        height: 0.75rem;
+        margin-right: 0.5rem;
+        background: url(./img/fzCircle/thumbs-up-blank.png) no-repeat;
+        background-size: cover;
+      }
+
+      .thumbs-up-fill {
+        background-image: url(./img/fzCircle/thumbs-up-icon.png) !important;
+      }
+
+      .thumbs-up-num_ {
+        font-style: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="headerCon">
+        <div class="back"></div>
+        <div class="title aui-ellipsis-1" id="content-title">
+          喜欢甜食的朋友：高糖饮食也会引起巴拉巴拉吧啦
+        </div>
+        <div class="backBlank"></div>
+      </div>
+    </header>
+    <div class="gzBox">
+      <div class="gzLeft">
+        <div class="avatar" onclick="lookDoctorInfo()">
+          <img id="author-img" src="./img/logo.png" alt="" />
+        </div>
+        <div id="">
+          <p id="author-hospital">辽宁省人民医院</p>
+          <span id="author-zname">赵宏伟 医生</span>
+        </div>
+      </div>
+      <div class="gzRight" id="attention-btn">关注</div>
+      <!--
+        <div class="gzRight" id="attention-btn gzRight-already">已关注</div>
+      -->
+    </div>
+    <div class="blank"></div>
+    <main>
+      <div class="infoTextBox">
+        <div class="infoText pingfangMedium" id="content-info">
+          <!-- 正文内容 -->
+          <a target="_blank"
+            >https://mp.weixin.qq.com/s/OkYOVVdcoVkx-zK369Qo4w</a
+          >
+          <div class="infoImg">
+            <img
+              src="http://doctor.show.chinanet.asia/imageAutoZoomShow/image.php?url=http://doctor.show.chinanet.asia/Public//bbs/image/2018-11-15/5bed3fda9a350.jpg&w=500&h=500"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="commentBox" id="comment">
+        <!-- 评论区域 -->
+        <div
+          class="infoBox"
+          onclick="noticeDialog('请前往下载app进行查看评论操作');"
+        >
+          <div class="gzBox" style="padding:0;">
+            <div class="gzLeft">
+              <div class="avatar" onclicl="lookDoctorInfo()">
+                <img
+                  src="http://doctor.show.chinanet.asia/Public//doctor/image/2018-11-08/5be4020e3388f.jpg"
+                  alt=""
+                />
+              </div>
+              <div>沈阳儿童医院<br />夫子医全科</div>
+            </div>
+          </div>
+          <div class="CommentTextCon">非常感谢，学习并收藏</div>
+          <div class="gzTools">
+            <div class="gzTools-l">2018-11-08 06:48:51</div>
+            <div class="gzTools-r">
+              <div class="talk">
+                <span class="tools-icon"></span><span>0</span>
+              </div>
+              <div
+                class="thumbs-up"
+                onclick="noticeDialog('请前往下载app进行点赞评论操作');stopPropagation();"
+              >
+                <div class="thumbs-up-blank"></div>
+                <span><i class="thumbs-up-num_">0</i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="blankFooter"></div>
+    <footer>
+      <div class="footerCon">
+        <input
+          type="text"
+          placeholder="写评论..."
+          class="writeTalk_"
+          readonly
+        />
+        <div class="commentTools">
+          <div class="thumbs-up" tapmode></div>
+          <div class="star" tapmode></div>
+        </div>
+      </div>
+      <div class="footerBlank"></div>
+    </footer>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/touch.js"></script>
+    <script src="./js/dialog.js"></script>
+    <script src="./js/mydialog.js"></script>
+    <script>
+      // 返回+
+      $('.back').on('click', function() {
+          history.back(-1);
+      });
+      //点击关注
+      $('#attention-btn').on('click', function() {
+        noticeDialog('请前往下载app进行关注操作');
+      });
+      //点击医生头像
+      function lookDoctorInfo() {
+        noticeDialog('请前往下载app进行查看医生信息操作');
+      }
+      //点赞文章
+      $('.commentTools .thumbs-up').on('click', function() {
+        noticeDialog('请前往下载app进行点赞文章操作');
+      });
+      //收藏文章
+      $('.commentTools .star').on('click', function() {
+        noticeDialog('请前往下载app进行收藏文章操作');
+      });
+      //点击评论框
+      $('.writeTalk_').on('click', function() {
+        noticeDialog('请前往下载app进行发表评论操作');
+      });
+      //阻止冒泡
+      function stopPropagation(e) {
+            e = e || window.event;
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else {
+                e.cancelBubble = true;
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+.blankIcon, .right-icon, .left-icon {
+    width: 1.5rem;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: .4rem .6rem;
+}
+
+.right-icon {
+    background-image: url(../img/fzCircle/right.png);
+}
+
+.left-icon {
+    background-image: url(../img/fzCircle/left.png);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 1.65rem;
+    border-bottom: 1px solid #e2e8e8;
+    padding: 0 1.2rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+header>.title {
+    font-family: pingfangBold, arial, sans-serif !important;
+    font-size: .8rem;
+    color: #000;
+    letter-spacing: .3rem;
+}
+
+.headerBlank {
+    width: 100%;
+    /* height: 1.65rem; */
+    height: 4.25rem;
+}
+
+
+/*.main {
+    box-sizing: border-box;
+}*/
+
+.infoBox {
+    width: 100%;
+    padding: .6rem 1.2rem .6rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    /*margin-bottom: .2rem;*/
+    border-bottom: .2rem solid #e2e8e8;
+    box-sizing: border-box;
+}
+
+.infoBox-active {
+    background-color: #ececec;
+}
+
+.infoBox .title {
+    margin-bottom: .25rem;
+    font-family: pingfangBold, arial, sans-serif !important;
+    font-size: .75rem;
+    color: #000;
+}
+
+.infoBox .titleBtm {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: .75rem;
+    font-family: pingfangMedium, arial, sans-serif!important;
+    font-size: .65rem;
+    color: #797575;
+}
+
+.infoBox .titleBtm div {
+    margin-right: .25rem;
+}
+
+.infoBox .textCon {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+    /*text-indent: 1rem;*/
+    text-align: justify;
+    font-family: pingfangMedium, arial, sans-serif!important;
+    font-size: .65rem;
+    color: #000;
+}
+
+.infoBox .imgBox {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-bottom: .9rem;
+}
+
+.infoBox .imgBox .imgItem {
+    flex: 0 0 4.5rem;
+    width: 4.5rem;
+    height: 100%;
+    margin-right: 8.6%;
+}
+
+.infoBox .imgBox .imgItem:last-child {
+    margin-right: 0;
+}
+
+.infoBox .imgBox .imgItem img {
+    width: 100%;
+    height: 100%;
+}
+
+.infoBox .tools, .gzTools .gzTools-r {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.infoBox .tools .talk, .infoBox .tools .thumbs-up, .infoBox .tools .star, .gzTools .gzTools-r .talk, .gzTools .gzTools-r .thumbs-up, .gzTools .gzTools-r .star {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.infoBox .tools .star, .gzTools .gzTools-r .star {
+    margin-right: 0;
+}
+
+.infoBox .tools .talk span:first-child, .gzTools .gzTools-r .talk span:first-child {
+    width: .75rem;
+    height: .6rem;
+    margin-right: .5rem;
+    background: url(../img/fzCircle/msg-icon.png) no-repeat;
+    background-size: cover;
+}
+
+.infoBox .tools .thumbs-up span:first-child, .gzTools .gzTools-r .thumbs-up span:first-child {
+    width: .75rem;
+    height: .75rem;
+    margin-right: .5rem;
+    background: url(../img/fzCircle/thumbs-up-blank.png) no-repeat;
+    background-size: cover;
+}
+
+.infoBox .tools .star span:first-child, .gzTools .gzTools-r .star span:first-child {
+    width: .75rem;
+    height: .7rem;
+    margin-right: .5rem;
+    background: url(../img/fzCircle/star-blank.png) no-repeat;
+    background-size: cover;
+}
+
+.star-fill {
+    height: .9rem !important;
+    background-image: url(../img/fzCircle/star-icon.png) !important;
+}
+
+.infoBox .tools .talk span:last-child, .infoBox .tools .thumbs-up span:last-child, .infoBox .tools .star span:last-child, .gzTools .gzTools-r .talk span:last-child, .gzTools .gzTools-r .thumbs-up span:last-child, .gzTools .gzTools-r .star span:last-child {
+    font-size: .6rem;
+}
+
+
+/*夫子医官方标示*/
+
+.official {
+    width: .55rem;
+    height: .55rem;
+    border-radius: 50%;
+    background: url(../img/fzCircle/vip.png) no-repeat;
+    background-size: 100%;
+    margin-left: .3rem;
+}
+
+.vipFlex {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+
+/******************************关注按钮**********************/
+
+.gzBox {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .55rem;
+}
+
+.gzLeft {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    font-family: pingfangBold, arial, sans-serif!important;
+    font-size: .6rem;
+}
+
+.gzLeft .avatar {
+    width: 2.9rem;
+    height: 2.9rem;
+    margin-right: .6rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.gzLeft .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.gzLeft div:nth-child(2) {
+    margin-right: .6rem;
+}
+
+.gzRight {
+    flex: 0 0 3.2rem;
+    width: 3.2rem;
+    height: 1rem;
+    line-height: 1rem;
+    border-radius: .25rem;
+    background-color: #ff0000;
+    text-align: center;
+    font-size: .6rem;
+    color: #fff;
+}
+
+.gzRight-already {
+    background-color: #e2e8e8 !important;
+}
+
+.gzTools {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.gzTools .gzTools-l {
+    font-size: .6rem;
+}
+
+.gzTools .gzTools-r {}
+
+
+/******************************关注按钮 end**********************/

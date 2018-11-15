@@ -45,7 +45,7 @@ body {
 .inputBox-bar .inputBox-bar-name>div:first-child {
     margin-bottom: .62rem;
     padding-left: .5rem;
-    background: url('../image/login/rectangle1.png') no-repeat;
+    background: url(../img/login/rectangle1.png) no-repeat;
     background-size: .1rem .6rem;
     background-position: left;
     font-size: .65rem;
@@ -179,7 +179,7 @@ body {
     width: 1.4rem;
     height: 1.4rem;
     border-radius: 50%;
-    background: url('../image/login/select.png') no-repeat;
+    background: url(../img/login/select.png) no-repeat;
     background-size: cover;
 }
 
@@ -191,7 +191,7 @@ body {
     height: 2.2rem;
     margin-top: -1.1rem;
     margin-left: -7.5%;
-    background: url('../image/login/small-line.png') no-repeat;
+    background: url(../img/login/small-line.png) no-repeat;
     background-position: center;
     background-size: 100% 1rem;
 }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <title>关注</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/aui.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fz_circle.css" />
+    <link rel="stylesheet" href="./css/dialog.css" />
+    <script src="./js/rem.js" charset="utf-8"></script>
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        overflow-y: auto;
+      }
+      .hheader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: -webkit-linear-gradient(top, #0f4bb2, #0052e7);
+        background: linear-gradient(top, #0f4bb2, #0052e7);
+        padding: 0.45rem 1.2rem;
+        box-sizing: border-box;
+      }
+
+      .hheader > .hheaderCon {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 1.7rem;
+        background-color: #e2e8e8;
+        border-radius: 0.5rem;
+        opacity: 0.27;
+        padding-left: 0.8rem;
+        box-sizing: border-box;
+        box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.94);
+      }
+
+      .hheaderCon .searchIcon {
+        width: 0.95rem;
+        height: 0.95rem;
+        margin-right: 0.7rem;
+        background-image: url(./img/fzCircle/search-icon.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .hheaderCon .searchWord {
+        font-size: 0.6rem;
+        color: #545353;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hheader">
+      <!-- <div class="title pingfangBold">夫子圈</div> -->
+      <!-- <div class="headerBlank"></div> -->
+      <div class="hheaderCon">
+        <span class="searchIcon"></span>
+        <span class="searchWord" id="search-text">搜索</span>
+      </div>
+    </div>
+    <header style="top: 2.6rem;">
+      <div class="left-icon"></div>
+      <div class="title">关注</div>
+      <div class="blankIcon" tapmode></div>
+    </header>
+    <div class="headerBlank"></div>
+    <div class="main">
+      <div class="infoBox" tapmode="infoBox-active" id="btn-info" onclick="openInfoDetails()">
+        <div class="gzBox">
+          <div class="gzLeft">
+            <div class="avatar"><img src="./img/logo.png" alt="" /></div>
+            <div class="vipFlex">
+              夫子医官方账号<span class="official"></span>
+            </div>
+          </div>
+        </div>
+        <div class="title" id="admin-title">夫子圈应用说明</div>
+        <div class="textCon" id="admin-content">
+          夫子圈——
+          由中国医科大学附属第一医院专家老师发起，各省级医院专家老师鼎力支持的医护交流学习互动平台！我们致力打造最纯粹的医护交流学习的环境——不许发广告，只有学术，技术，经验的交流。在平台内，老师可以点击对方的头像，会展示出这位老师的照片和详细简介，方便老师之间的认识和交流。
+          使用方法和微博一样，可以留言、关注、收藏、互动。在“论坛管理”里有各个科室领域的相关文章、病例、护理等信息，您可根据个人需求筛选您感兴趣的话题哦按下面操作轻松新手上路耶夫子圈库房有货，欢迎来提
+        </div>
+        <div class="gzTools">
+          <div class="gzTools-l" id="admin-time">2018-10-18 21:41:42</div>
+          <div class="gzTools-r">
+            <div class="talk">
+              <span class="tools-icon"></span>
+              <span id="admin-conmment">0</span>
+            </div>
+            <div class="thumbs-up">
+              <span class="tools-icon"></span> <span id="admin-like">9</span>
+            </div>
+            <div class="star">
+              <span class="tools-icon"></span> <span id="admin-collect">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content"></div>
+      <div class="infoBox" tapmode="infoBox-active" onclick="openInfoDetails()">
+        <div class="gzBox">
+          <div class="gzLeft">
+            <div class="avatar">
+              <img
+                src="http://doctor.show.chinanet.asia/Public//doctor/image/2018-09-11/5b97851948869.jpg"
+                alt=""
+              />
+            </div>
+            <div>辽宁省人民医院</div>
+            <div><span>赵宏伟</span></div>
+          </div>
+          <div class="gzRight gzRight-already">已关注</div>
+        </div>
+        <div class="title">喜欢甜食的朋友：高糖饮食也会引起高血压！</div>
+        <div class="titleBtm">
+          <div>2018-11-15 17:44:37</div>
+          <div>来源: <span>辽宁省人民医院</span></div>
+          <div>赵宏伟</div>
+        </div>
+        <div class="textCon">
+          https://mp.weixin.qq.com/s/OkYOVVdcoVkx-zK369Qo4w
+        </div>
+        <div class="imgBox">
+          <div class="imgItem">
+            <img
+              src="http://doctor.show.chinanet.asia/imageAutoZoomShow/image.php?url=http://doctor.show.chinanet.asia/Public//bbs/image/2018-11-15/5bed3fda9a350.jpg&w=120&h=120"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="tools">
+          <div class="talk"><span class="tools-icon"></span><span>0</span></div>
+          <div class="thumbs-up">
+            <span class="tools-icon"></span><span>1</span>
+          </div>
+          <div class="star"><span class="tools-icon"></span><span>1</span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/zepto.min.js"></script>
+  <script src="./js/touch.js"></script>
+  <script src="./js/dialog.js"></script>
+  <script src="./js/mydialog.js"></script>
+  <script>
+    function openInfoDetails() {
+      // console.log(id);
+      window.location.href = './info_details_fzq.html';
+    }
+    // 打开关注
+    $('.left-icon').tap(function() {
+      window.location.href = './hotspot.html';
+    });
+    //跳转搜索页
+    $('.hheaderCon').tap(function() {
+      window.location.href = './search_win.html';
+    });
+  </script>
+</html>
