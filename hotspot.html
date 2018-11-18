@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./css/aui.2.0.css" />
     <link rel="stylesheet" type="text/css" href="./css/fz_circle.css" />
     <link rel="stylesheet" href="./css/dialog.css" />
+    <link rel="stylesheet" href="./css/dropload.css" />
     <script src="./js/rem.js" charset="utf-8"></script>
     <style>
       html,
@@ -156,6 +157,7 @@
   <script src="./js/touch.js"></script>
   <script src="./js/dialog.js"></script>
   <script src="./js/mydialog.js"></script>
+  <script src="./js/dropload.min.js"></script>
   <script>
     function openInfoDetails() {
       // console.log(id);
@@ -167,8 +169,68 @@
     });
 
     //跳转搜索页
-    $('.hheaderCon').tap(function () {
-        window.location.href = './search_win.html';
-     });
+    $('.hheaderCon').tap(function() {
+      window.location.href = './search_win.html';
+    });
+    //  下拉刷新
+    $('#content').dropload({
+      scrollArea: window,
+      domDown: {
+        domClass: 'dropload-down',
+        domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+        domLoad:
+          '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+        domNoData: '<div class="dropload-noData">暂无数据</div>'
+      },
+      loadDownFn: function(me) {
+        $.ajax({
+          type: 'GET',
+          url: './more.json',
+          dataType: 'json',
+          success: function(data) {
+            if (data.lists.length > 0) {
+              var result =
+                '<div class="infoBox" tapmode="infoBox-active" ' +
+                'onclick="openInfoDetails()">' +
+                '<div class="title">test喜欢甜食的朋友：高糖饮食也会引起高血压！</div>' +
+                '<div class="titleBtm">' +
+                '<div><span>辽宁省人民医院</span></div>' +
+                '<div>赵宏伟</div>' +
+                '<div style="display:none">2018-11-15 17:44:37</div>' +
+                '</div>' +
+                '<div class="textCon">' +
+                'https://mp.weixin.qq.com/s/OkYOVVdcoVkx-zK369Qo4w' +
+                '</div>' +
+                '<div class="titleBtm"><div>2018-11-15 17:44:37</div></div>' +
+                '<div class="tools">' +
+                '<div class="talk"><span class="tools-icon"></span><span>0</span></div>' +
+                '<div class="thumbs-up">' +
+                '<span class="tools-icon"></span><span>1</span>' +
+                '</div>' +
+                '<div class="star"><span class="tools-icon"></span><span>1</span></div>' +
+                '</div>' +
+                '</div >';
+            } else {
+              // 如果没有数据
+              //锁定
+              me.lock();
+              // 无数据
+              me.noData();
+            }
+            // 为了测试，延迟2秒加载
+            setTimeout(function() {
+              $('.dropload-down').before(result);
+              // 每次数据加载完，必须重置
+              me.resetload();
+            }, 2000);
+          },
+          error: function(xhr, type) {
+            alert('Ajax error!');
+            // 即使加载出错，也得重置
+            me.resetload();
+          }
+        });
+      }
+    });
   </script>
 </html>

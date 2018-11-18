@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="./css/aui.2.0.css" />
     <link rel="stylesheet" type="text/css" href="./css/fz_circle.css" />
     <link rel="stylesheet" href="./css/dialog.css" />
+    <link rel="stylesheet" href="./css/dropload.css" />
     <script src="./js/rem.js" charset="utf-8"></script>
     <style>
       html,
@@ -63,7 +64,7 @@
 
       .gzBox {
         position: fixed;
-        top: 3.6rem;
+        top: 2.6rem;
         left: 0;
         width: 100%;
         height: 3.55rem;
@@ -290,10 +291,11 @@
     <script src="./js/touch.js"></script>
     <script src="./js/dialog.js"></script>
     <script src="./js/mydialog.js"></script>
+    <script src="./js/dropload.min.js"></script>
     <script>
       // 返回+
       $('.back').on('click', function() {
-          history.back(-1);
+        history.back(-1);
       });
       //点击关注
       $('#attention-btn').on('click', function() {
@@ -317,13 +319,83 @@
       });
       //阻止冒泡
       function stopPropagation(e) {
-            e = e || window.event;
-            if (e.stopPropagation) {
-                e.stopPropagation();
-            } else {
-                e.cancelBubble = true;
-            }
+        e = e || window.event;
+        if (e.stopPropagation) {
+          e.stopPropagation();
+        } else {
+          e.cancelBubble = true;
         }
+      }
+
+      //  下拉刷新
+      $('#comment').dropload({
+        scrollArea: window,
+        domDown: {
+          domClass: 'dropload-down',
+          domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+          domLoad:
+            '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+          domNoData: '<div class="dropload-noData">暂无数据</div>'
+        },
+        loadDownFn: function(me) {
+          $.ajax({
+            type: 'GET',
+            url: './more.json',
+            dataType: 'json',
+            success: function(data) {
+              if (data.lists.length > 0) {
+                var result =
+                  '<div class="infoBox" ' +
+                  'onclick = "noticeDialog(\'请前往下载app进行查看评论操作\');">' +
+                  '<div class="gzBox" style="padding:0;">' +
+                  '<div class="gzLeft">' +
+                  '<div class="avatar" onclicl="lookDoctorInfo()">' +
+                  '<img ' +
+                  'src="http://doctor.show.chinanet.asia/Public//doctor/image/2018-11-08/5be4020e3388f.jpg"' +
+                  'alt="" />' +
+                  '</div>' +
+                  '<div>沈阳儿童医院<br />夫子医全科</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="CommentTextCon">test非常感谢，学习并收藏</div>' +
+                  '<div class="gzTools">' +
+                  '<div class="gzTools-l">2018-11-08 06:48:51</div>' +
+                  '<div class="gzTools-r">' +
+                  '<div class="talk">' +
+                  '<span class="tools-icon"></span><span>0</span>' +
+                  '</div>' +
+                  '<div' +
+                  'class="thumbs-up"' +
+                  "onclick=\"noticeDialog('请前往下载app进行点赞评论操作');" +
+                  'stopPropagation();">' +
+                  '<div class="thumbs-up-blank"></div>' +
+                  '<span><i class="thumbs-up-num_">0</i></span>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div >';
+              } else {
+                // 如果没有数据
+                //锁定
+                me.lock();
+                // 无数据
+                me.noData();
+              }
+              // 为了测试，延迟2秒加载
+              setTimeout(function() {
+                $('.dropload-down').before(result);
+                // 每次数据加载完，必须重置
+                me.resetload();
+              }, 2000);
+            },
+            error: function(xhr, type) {
+              alert('Ajax error!');
+              // 即使加载出错，也得重置
+              me.resetload();
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
